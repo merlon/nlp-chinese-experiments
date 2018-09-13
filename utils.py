@@ -1,4 +1,5 @@
 import numpy as np
+import lxml
 
 def list2seg(s):
     seg=[]
