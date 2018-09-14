@@ -113,6 +113,7 @@ For any future chinese embeddigns research, we will need huge corpus of raw chin
 Luckily, we have whole factiva clone in json format in google storage (also indexed in elasticsearch).
 
 Data is described in the beggining of this document: https://docs.google.com/document/d/1j_5AYKNEM0tbRgixkmM1OzGjLbUHWIB52kYPRzCdVbY/edit#heading=h.xtuqoz5uvrzr
+
 Link to the data is: https://console.cloud.google.com/storage/browser/factiva-snapshots-processed/snapshot-full?project=merlon-182319&authuser=0&pli=1&angularJsUrl=%2Fstorage%2Fbrowser%2Ffactiva-snapshots-processed%3Fproject%3Dmerlon-182319%26authuser%3D1%26pli%3D1
 
 To download the data and other operations, I strongly reccomend use of gsutil tool.
