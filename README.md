@@ -7,7 +7,7 @@ For any questions about this repo, contact Jan Bogar.
 This README is organized as follows:
 1. Papers and other sources I read, with notes
 2. experiment with segmentation
-3. Conclusion from the experiment
+3. Conclusion from the experiment, where to go next
 4. For the future: where to get data
 
 ## Papers
@@ -92,22 +92,22 @@ Jieba would be capable of segmenting  whole factiva in a matter of 1-2 days on a
 There are three possible ways to use chinese embeddings in our pipeline:
 
 **Segmentation  + embeddings with fasttext**
-Segmentation could simplify other  NLP tasks
-This would keep chinese pipeline similar to english pipeline, which would simplify development
-Fasttext embeddings for chinese words are freely available and would be easy to use . Also training the embeddings on our own datasets would be relatively easy.
-Fasttext might also be partially immune to effects of erroneous segmentation, since it uses subword information for learning of embeddings, and therefore might assign approximately correct vector also to word that is incomplete or has some characters added. This is however untested hypothesis.
+ - Segmentation could simplify other  NLP tasks
+ - This would keep chinese pipeline similar to english pipeline, which would simplify development
+ - Fasttext embeddings for chinese words are freely available and would be easy to use . Also training the embeddings on our own  datasets would be relatively easy.
+ - Fasttext might also be partially immune to effects of erroneous segmentation, since it uses subword information for learning of embeddings, and therefore might assign approximately correct vector also to word that is incomplete or has some characters added. This is however untested hypothesis.
 
 **Segmentation free approach**
-segmentation is unreliable and introduces another source of error early on in the pipeline.
-For segmentation-free approaches, implementations are few. Training of our own embeddings would require a lot more effort (about weeks of research and coding for working prototype at best, unless ngram2vec proves viable option).
-The pipeline would be simplified (but would also diverge from english pipeline) and precision could be potentially higher.
+ - segmentation is unreliable and introduces another source of error early on in the pipeline.
+ - For segmentation-free approaches, implementations are few. Training of our own embeddings would require a lot more effort (about a week of research and coding for working prototype at best, unless ngram2vec proves viable option).
+ - The pipeline would be simplified (but would also diverge from english pipeline) and precision could be potentially higher.
 
 **Use fasttext on unsegmented text ( e.g. use all ngrams in the text instead of words)**
-Very easy
-Likely worse than both of the above
+ - Very easy
+ - Likely worse than both of the above
 
 My recommendation is to use segmentation+fasttext and fasttext on unsegmented text as as a reasonable first step.
-As a second iteration I would focuse on Ngram2Vec. I would trick it to treat each character as separate word. Since ngram2vec is supposed to learn embeddings for ngrams of words, it would instead learn rembeddigns for ngrams. Since it's likely to work almost out of the box, it is a reasonable segmentation free approach and we would get all utilities shipped with it for free.
+As a second iteration I would focuse on Ngram2Vec. I would trick it to treat each character as separate word. Since ngram2vec is supposed to learn embeddings for ngrams of words, it would instead learn embeddigns of ngrams of characters. Since it's likely to work almost out of the box, it is a reasonable segmentation free approach and we would get all utilities shipped with it for free.
 
 ## For the future: where to get data
 For any future chinese embeddigns research, we will need huge corpus of raw chinese text.
