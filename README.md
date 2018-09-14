@@ -82,7 +82,6 @@ https://github.com/oapio/nlp-chinese-experiments/blob/master/word%20lengths.ipyn
 
 Results: 95 % of words has three characters or less, 90 % characters has 2 characters or less
 
-
 ## Conclusion
 Majority of approaches to chinese NLP (including embeddings) assumes segmentation of chinese sentences as a first step. In light of that, I researched two tools for chinese language segmentation: Stanford NLP Segmenter and Jieba .
 
@@ -111,7 +110,7 @@ As a second iteration I would focuse on Ngram2Vec. I would trick it to treat eac
 
 ## For the future: where to get data
 For any future chinese embeddigns research, we will need huge corpus of raw chinese text.
-Luckily, we have whole factiva clone in json format in google storage (also indexed in elasticsearch).
+Luckily, we have whole factiva clone in jsonl format in google storage (also indexed in elasticsearch).
 
 Data is described in the beggining of this document: https://docs.google.com/document/d/1j_5AYKNEM0tbRgixkmM1OzGjLbUHWIB52kYPRzCdVbY/edit#heading=h.xtuqoz5uvrzr
 
@@ -119,5 +118,6 @@ Link to the data is: https://console.cloud.google.com/storage/browser/factiva-sn
 
 To download the data and other operations, I strongly reccomend use of gsutil tool.
 If you will train embeddings in google cloud, you don't have to download the data, so just download one month or one year for experiments.
+It is really just a bunch of jsonl files with one article per line, sorted into directories by language, year and month.
 
 Person of contact for the data is Michal Nanasi.
