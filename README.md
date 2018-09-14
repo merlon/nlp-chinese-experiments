@@ -79,13 +79,14 @@ Number of sentences without error: 4622 for jieba, 4843 for stanfordNLP
 
 ### word length distribution
 https://github.com/oapio/nlp-chinese-experiments/blob/master/word%20lengths.ipynb
+
 Results: 95 % of words has three characters or less, 90 % characters has 2 characters or less
 
 
 ## Conclusion
 Majority of approaches to chinese NLP (including embeddings) assumes segmentation of chinese sentences as a first step. In light of that, I researched two tools for chinese language segmentation: Stanford NLP Segmenter and Jieba .
 
-On my human annotated dataset, only about 10% of sentences are segmented without any error. Even if the segmentation rules are not clear, it is alarmingly low success ratio. Accuracy on individual boundaries is for both jieba and stanford sentencer below 90 %.
+On my human annotated dataset, only about 10% of sentences are segmented without any error. Even if the segmentation rules are not clear, it is alarmingly low success ratio. Accuracy on individual boundaries is for both jieba and stanford sentencer are below 90 %.
 
 Jieba would be capable of segmenting  whole factiva in a matter of 1-2 days on a single machine.
 There are three possible ways to use chinese embeddings in our pipeline:
